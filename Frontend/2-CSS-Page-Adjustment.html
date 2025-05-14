@@ -1,0 +1,251 @@
+<!-- 
+1. A page which specify a black border for table and if hover on it, page should change 
+its colour. 
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Table Border Hover</title>
+  <style>
+    table {
+      border: 2px solid black;
+      width: 100%;
+    }
+    table:hover {
+      background-color: lightgray;
+    }
+  </style>
+</head>
+<body>
+
+  <table>
+    <tr>
+      <th>Header 1</th>
+      <th>Header 2</th>
+    </tr>
+    <tr>
+      <td>Row 1, Cell 1</td>
+      <td>Row 1, Cell 2</td>
+    </tr>
+    <tr>
+      <td>Row 2, Cell 1</td>
+      <td>Row 2, Cell 2</td>
+    </tr>
+  </table>
+
+</body>
+</html>
+
+
+
+
+
+<!-- 
+2. Apply different visibility by an element (visibility: hidden, visible, collapse) 
+and use different types of display for an element (display: none, inline, block, contents, list-item)
+-->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Visibility and Display</title>
+  <style>
+    .hidden {
+      visibility: hidden;
+    }
+    .visible {
+      visibility: visible;
+    }
+    .collapse {
+      visibility: collapse;
+    }
+    .block-element {
+      display: block;
+    }
+    .inline-element {
+      display: inline;
+    }
+    .list-item-element {
+      display: list-item;
+    }
+    .none-element {
+      display: none;
+    }
+    .contents-element {
+      display: contents;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Visibility and Display Examples</h2>
+  <div class="block-element">This is a block-level element.</div>
+  <div class="inline-element">This is an inline element.</div>
+  <div class="list-item-element">This is a list-item element.</div>
+  <div class="none-element">This element is not displayed at all.</div>
+  <div class="contents-element">The content of this div will be displayed but the div itself will not be.</div>
+  
+  <p class="hidden">This is a hidden element (visibility: hidden).</p>
+  <p class="visible">This is a visible element (visibility: visible).</p>
+  <p class="collapse">This is collapsed (visibility: collapse).</p>
+
+</body>
+</html>
+
+
+
+
+
+
+
+<!-- 
+3. A long page which should have two links "click to go to bottom of page" and "click to 
+go to top of page". Also set their scroll-behavior to scroll smoothly.
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Smooth Scrolling</title>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    #top {
+      margin-top: 100px;
+    }
+    #bottom {
+      margin-top: 1000px;
+    }
+  </style>
+</head>
+<body>
+
+  <a href="#bottom">Click to go to bottom of page</a>
+  <a href="#top" style="margin-left: 20px;">Click to go to top of page</a>
+
+  <div id="top">
+    <h2>Top of the Page</h2>
+    <p>Scroll down to see the bottom link.</p>
+  </div>
+
+  <div id="bottom">
+    <h2>Bottom of the Page</h2>
+    <p>Now you can scroll back to the top.</p>
+  </div>
+
+</body>
+</html>
+
+
+
+
+
+
+<!-- 
+4. Add padding and margin with different size and understand the difference between them. 
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Padding and Margin Example</title>
+  <style>
+    .box {
+      width: 200px;
+      height: 100px;
+      background-color: lightblue;
+      padding: 20px;
+      margin: 20px;
+    }
+    .box2 {
+      width: 200px;
+      height: 100px;
+      background-color: lightgreen;
+      padding: 10px;
+      margin: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="box">Box with padding and margin</div>
+  <div class="box2">Box with different padding and margin</div>
+
+</body>
+</html>
+
+
+
+
+
+<!-- 
+5. A page with multiple background images for a webpage or element and define their 
+adjustable sizes. 
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Multiple Background Images</title>
+  <style>
+    body {
+      background-image: url('https://tse3.mm.bing.net/th/id/OIP.PkGUYXIeSMnJ4KlICC6vrgHaEK?cb=iwp2&rs=1&pid=ImgDetMain'), url('https://tse2.mm.bing.net/th/id/OIP.FDjwEEQTXm5-71B4L4W-vgHaEK?cb=iwp2&rs=1&pid=ImgDetMain');
+      background-position: left top, right bottom;
+      background-size: 300px 200px, 200px 100px;
+      background-repeat: no-repeat, no-repeat;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Multiple Background Images</h1>
+  <p>The background consists of two images with different sizes and positions.</p>
+
+</body>
+</html>
+
+
+
+
+
+
+
+<!-- 
+
+Things to know 
+ 
+1. Difference between visibility:hidden and display:none? 
+
+visibility:hidden: The element remains in the layout but is not visible (space is still reserved for it).
+display:none: The element is completely removed from the layout (no space is reserved).
+
+ 
+
+
+2. Difference between inline and block level elements? 
+
+Block elements (e.g., <div>, <p>) take up the full width and start on a new line.
+Inline elements (e.g., <span>, <a>) take up only as much width as necessary and do not start on a new line.
+
+
+
+
+3. What are selectors? 
+
+Selectors are patterns used to select HTML elements for styling. Examples: 
+- Type selector: p { ... }
+- Class selector: .class-name { ... }
+- ID selector: #id-name { ... }
+
+
+
+ 
+4. Which property is used to set the line style for the outline? 
+
+The property used to set the line style for the outline is: outline-style
+Examples: solid, dashed, dotted
+
+-->

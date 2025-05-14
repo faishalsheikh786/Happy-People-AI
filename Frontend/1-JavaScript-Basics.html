@@ -1,0 +1,121 @@
+<!-- 1. Write a program which consist of single line and multiline comments. -->
+
+<!--         
+
+// This is a single-line comment    
+
+-->
+<!--              
+
+/*
+This is a
+multi-line comment
+explaining the code below
+*/                     
+
+ -->
+
+
+
+
+                                           
+<!-- 
+2. Create an array consisting of fruits names and when we click on a button sort it in 
+descending order. 
+-->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sort Fruits</title>
+  <script>
+    function sortFruits() {
+      let fruits = ["Banana", "Apple", "Mango", "Pineapple"];
+      fruits.sort().reverse();
+      document.getElementById("output").innerHTML = fruits.join(", ");
+    }
+  </script>
+</head>
+<body>
+  <button onclick="sortFruits()">Sort Fruits Descending</button>
+  <p id="output"></p>
+</body>
+</html>
+
+
+
+
+
+<!-- 
+
+// 3. Write a program with FOR/IN loop.
+
+const car = {brand: "Toyota", model: "Camry", year: 2022};
+
+for (let key in car) {
+  console.log(key + ": " + car[key]);
+} 
+  
+-->
+
+
+
+
+<!--
+4. Create an object "person" with properties firstname and lastname. Display these 
+properties using 2 different ways of accessing.
+
+const person = {
+  firstname: "John",
+  lastname: "Doe"
+};
+
+console.log(person.firstname);    
+console.log(person["lastname"]);
+-->
+
+
+
+
+<!--
+5. Write a program with variable hoisting(initialization first then declaration).
+
+x = 5;
+console.log(x); 
+var x;         
+-->
+
+
+
+
+<!--
+6. Use strict mode in your program and understand why variable not declared causes error.
+
+"use strict";
+try {
+  undeclaredVariable = 10; // Error: undeclaredVariable is not defined
+} catch (error) {
+  console.log("Error caught:", error.message);
+}
+-->
+
+
+
+
+<!--
+
+Things to know:
+1. How JavaScript differs from Java?
+
+JavaScript:
+- Scripting language used mainly for web development.
+- Dynamically typed.
+- Interpreted in the browser.
+- Prototype-based object model.
+
+Java:
+- General-purpose programming language.
+- Statically typed.
+- Compiled and runs in JVM.
+- Class-based object model.
+
+-->

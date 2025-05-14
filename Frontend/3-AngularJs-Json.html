@@ -1,0 +1,104 @@
+<!-- 
+1. Create a table and receive the contents from JSON file, sort it using filters. Show the usage of $index, $odd and $even.
+-->
+
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+  <meta charset="UTF-8">
+  <title>AngularJS JSON Table</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <style>
+    .odd { background-color: #f2f2f2; }
+    .even { background-color: #e0e0e0; }
+  </style>
+</head>
+<body ng-controller="TableCtrl">
+
+  <h2>Sorted Table with JSON Data</h2>
+  <input type="text" ng-model="searchText" placeholder="Search...">
+  <table border="1">
+    <tr>
+      <th><a href="#" ng-click="sortBy='name'">Name</a></th>
+      <th><a href="#" ng-click="sortBy='age'">Age</a></th>
+      <th><a href="#" ng-click="sortBy='city'">City</a></th>
+    </tr>
+    <tr ng-repeat="person in people | filter:searchText | orderBy:sortBy"
+        ng-class="{'odd': $odd, 'even': $even}">
+      <td>{{ $index + 1 }}. {{ person.name }}</td>
+      <td>{{ person.age }}</td>
+      <td>{{ person.city }}</td>
+    </tr>
+  </table>
+
+  <script>
+    angular.module('myApp', [])
+      .controller('TableCtrl', function($scope) {
+        $scope.sortBy = 'name';
+        $scope.people = [
+          { name: "Alice", age: 25, city: "New York" },
+          { name: "Bob", age: 30, city: "London" },
+          { name: "Charlie", age: 22, city: "Paris" },
+          { name: "David", age: 28, city: "Berlin" }
+        ];
+      });
+  </script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+<!-- 
+2. Create a select element with some options. Spot the difference between ng-options and ng-repeat by using both inside the program.
+-->
+
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+  <meta charset="UTF-8">
+  <title>ng-options vs ng-repeat</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+<body ng-controller="SelectCtrl">
+
+  <h2>Using ng-options</h2>
+  <select ng-model="selectedFruit1" ng-options="fruit for fruit in fruits">
+    <option value="">-- Select a Fruit --</option>
+  </select>
+  <p>You selected (ng-options): {{ selectedFruit1 }}</p>
+
+  <h2>Using ng-repeat</h2>
+  <select ng-model="selectedFruit2">
+    <option ng-repeat="fruit in fruits" value="{{ fruit }}">{{ fruit }}</option>
+  </select>
+  <p>You selected (ng-repeat): {{ selectedFruit2 }}</p>
+
+  <script>
+    angular.module('myApp', [])
+      .controller('SelectCtrl', function($scope) {
+        $scope.fruits = ["Apple", "Banana", "Mango", "Grapes"];
+      });
+  </script>
+
+</body>
+</html>
+
+
+
+
+
+<!-- 
+
+Things to Know
+
+1. Understand the Concept of JSON
+
+JSON (JavaScript Object Notation) is a lightweight data format used for data exchange.
+It's written in key-value pairs and can be parsed easily in JavaScript and AngularJS. 
+
+-->

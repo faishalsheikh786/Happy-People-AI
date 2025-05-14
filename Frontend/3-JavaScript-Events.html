@@ -1,0 +1,182 @@
+<!-- 
+1. Add an event listener to a button. When we click on it it should display current date and time.
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Display Date and Time</title>
+  <script>
+    function showDateTime() {
+      document.getElementById("output").innerText = new Date();
+    }
+
+    window.onload = function() {
+      document.getElementById("btn").addEventListener("click", showDateTime);
+    }
+  </script>
+</head>
+<body>
+  <button id="btn">Show Date and Time</button>
+  <p id="output"></p>
+</body>
+</html>
+
+
+
+
+
+<!-- 
+2. Show the javascript validation. When you click submit, the text box doesn't need to be empty.
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Form Validation</title>
+  <script>
+    function validateForm() {
+      var name = document.getElementById("name").value;
+      if (name === "") {
+        alert("Name field must not be empty!");
+        return false;
+      }
+      alert("Form submitted!");
+      return true;
+    }
+  </script>
+</head>
+<body>
+  <form onsubmit="return validateForm()">
+    <input type="text" id="name" placeholder="Enter your name">
+    <input type="submit" value="Submit">
+  </form>
+</body>
+</html>
+
+
+
+
+
+<!-- 
+3. How console.log() can be used for Debugging.
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Console Debugging</title>
+  <script>
+    function debugExample() {
+      var num1 = 5;
+      var num2 = 10;
+      var sum = num1 + num2;
+      console.log("Sum is:", sum); // Debugging the sum
+      alert("Check the console for result.");
+    }
+  </script>
+</head>
+<body>
+  <button onclick="debugExample()">Debug with console.log()</button>
+</body>
+</html>
+
+
+
+
+
+
+<!-- 
+4. Write functions to set a cookie, get a cookie and check a cookie in a single program.
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cookie Example</title>
+  <script>
+    function setCookie(name, value, days) {
+      const d = new Date();
+      d.setTime(d.getTime() + (days*24*60*60*1000));
+      document.cookie = name + "=" + value + ";expires=" + d.toUTCString() + ";path=/";
+    }
+
+    function getCookie(name) {
+      const cname = name + "=";
+      const decoded = decodeURIComponent(document.cookie);
+      const ca = decoded.split(';');
+      for(let i = 0; i < ca.length; i++) {
+        let c = ca[i].trim();
+        if (c.indexOf(cname) === 0) return c.substring(cname.length, c.length);
+      }
+      return "";
+    }
+
+    function checkCookie() {
+      const user = getCookie("username");
+      if (user != "") {
+        alert("Welcome again " + user);
+      } else {
+        const name = prompt("Please enter your name:");
+        if (name != "" && name != null) {
+          setCookie("username", name, 5);
+        }
+      }
+    }
+  </script>
+</head>
+<body onload="checkCookie()">
+</body>
+</html>
+
+
+
+
+
+<!-- 
+5. Create a JSON object and access it using dot notation.
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JSON Access</title>
+  <script>
+    var student = {
+      name: "Alice",
+      age: 20,
+      course: "JavaScript"
+    };
+
+    window.onload = function() {
+      document.getElementById("info").innerText =
+        "Name: " + student.name + ", Age: " + student.age + ", Course: " + student.course;
+    };
+  </script>
+</head>
+<body>
+  <h3>Student Info:</h3>
+  <p id="info"></p>
+</body>
+</html>
+
+
+
+
+
+<!-- 
+
+Things to Know
+
+1. Debugging in JavaScript
+
+Use console.log() to track values.
+Use browser DevTools for breakpoints and inspecting variables.
+
+
+2. What are Cookies?
+
+Cookies store small data (like user info) on the browser.
+They help personalize content, track sessions, and maintain user state. 
+
+-->

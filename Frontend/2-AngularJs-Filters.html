@@ -1,0 +1,193 @@
+<!-- 
+1. Program to apply various filters like date, uppercase, lowercase, number etc. and also apply a custom filter.
+-->
+
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+  <meta charset="UTF-8">
+  <title>AngularJS Filters Example</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <script>
+    var app = angular.module('myApp', []);
+    
+    app.controller('myCtrl', function($scope) {
+      $scope.today = new Date();
+      $scope.message = "hello world!";
+      $scope.number = 12345.6789;
+    });
+    
+    // Custom Filter
+    app.filter('reverse', function() {
+      return function(input) {
+        return input.split('').reverse().join('');
+      };
+    });
+  </script>
+</head>
+<body ng-controller="myCtrl">
+
+  <h1>Using Built-in Filters</h1>
+  <p>Formatted Date: {{ today | date:'fullDate' }}</p>
+  <p>Uppercase: {{ message | uppercase }}</p>
+  <p>Lowercase: {{ message | lowercase }}</p>
+  <p>Formatted Number: {{ number | number:2 }}</p>
+
+  <h1>Using Custom Filter</h1>
+  <p>Reversed Message: {{ message | reverse }}</p>
+
+</body>
+</html>
+
+
+
+
+
+
+<!-- 
+2. Program with various services like $location, $http, $timeout etc. and also use custom service.
+-->
+
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+  <meta charset="UTF-8">
+  <title>AngularJS Services Example</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <script>
+    var app = angular.module('myApp', []);
+    
+
+    app.service('greetingService', function() {
+      this.greet = function(name) {
+        return 'Hello, ' + name;
+      };
+    });
+    
+    app.controller('myCtrl', function($scope, $location, $http, $timeout, greetingService) {
+      $scope.url = $location.absUrl(); 
+      $scope.greetingMessage = greetingService.greet("John");
+      
+
+      $http.get('https://jsonplaceholder.typicode.com/users')
+        .then(function(response) {
+          $scope.users = response.data;
+        });
+      
+
+      $timeout(function() {
+        alert("This alert appears after 2 seconds!");
+      }, 2000);
+    });
+  </script>
+</head>
+<body ng-controller="myCtrl">
+  
+  <h1>Current URL: {{ url }}</h1>
+  <p>{{ greetingMessage }}</p>
+  
+  <h2>Users List (from API)</h2>
+  <ul>
+    <li ng-repeat="user in users">{{ user.name }}</li>
+  </ul>
+
+</body>
+</html>
+
+
+
+
+
+<!-- 
+3. Program to show various http methods like get(), post() and properties like .config, .data, .status.
+-->
+
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+  <meta charset="UTF-8">
+  <title>AngularJS HTTP Methods</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <script>
+    var app = angular.module('myApp', []);
+    
+    app.controller('myCtrl', function($scope, $http) {
+      $http.get('https://jsonplaceholder.typicode.com/posts')
+        .then(function(response) {
+          $scope.posts = response.data;  
+          console.log('GET response:', response);
+        });
+
+      $http.post('https://jsonplaceholder.typicode.com/posts', { title: 'foo', body: 'bar', userId: 1 })
+        .then(function(response) {
+          $scope.postResponse = response.data;
+          console.log('POST response:', response);
+        });
+
+      $http.get('https://jsonplaceholder.typicode.com/posts')
+        .then(function(response) {
+          console.log('Status:', response.status);
+          console.log('Config:', response.config);  
+        });
+    });
+  </script>
+</head>
+<body ng-controller="myCtrl">
+  
+  <h1>GET Data</h1>
+  <pre>{{ posts | json }}</pre>
+  
+  <h1>POST Response</h1>
+  <pre>{{ postResponse | json }}</pre>
+
+</body>
+</html>
+
+
+
+
+
+
+<!-- 
+4. Program that includes the Angular API like angular.lowercase() and angular.uppercase().
+-->
+
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+  <meta charset="UTF-8">
+  <title>AngularJS API Example</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <script>
+    var app = angular.module('myApp', []);
+    
+    app.controller('myCtrl', function($scope) {
+      $scope.text = "Hello World!";
+    });
+  </script>
+</head>
+<body ng-controller="myCtrl">
+
+  <h1>Original Text: {{ text }}</h1>
+  <h2>Lowercase: {{ text | lowercase }}</h2>
+  <h2>Uppercase: {{ text | uppercase }}</h2>
+
+</body>
+</html>
+
+
+
+
+
+<!-- Things To Know 
+
+1. Understand the concepts of filters and API?
+
+Filters: In AngularJS, filters allow you to format data for display. 
+They can format dates, numbers, strings, or even create custom formatting logic.
+
+API (Application Programming Interface): AngularJS provides various built-in APIs, 
+such as $http, $location, and many others, which are used to interact with external resources or manage different aspects 
+of the application (e.g., data fetching, URL handling).
+
+-->

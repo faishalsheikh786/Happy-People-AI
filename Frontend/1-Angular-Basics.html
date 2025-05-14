@@ -1,0 +1,81 @@
+<!-- 
+1. Write a program to evaluate expressions using {{ and }}. Create a text box and 
+change the background of text box when we give a color value. 
+-->
+
+<!DOCTYPE html>
+<html ng-app>
+<head>
+  <title>Expression and Color</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+<body>
+
+  <h2>Enter your name:</h2>
+  <input type="text" ng-model="name">
+  <p>Hello, {{ name }}</p>
+
+  <h2>Change Textbox Background Color</h2>
+  <input type="text" ng-model="bgColor" placeholder="Enter a color (e.g., red)">
+  <input type="text" ng-style="{'background-color': bgColor}" placeholder="Color box here">
+
+</body>
+</html>
+
+
+
+
+
+
+<!-- 
+2. Understand a module and program to include a directive and a controller inside a module from external js file.
+-->
+
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+  <meta charset="UTF-8">
+  <title>AngularJS Module Example</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <script src="1-app.js"></script> 
+</head>
+<body ng-controller="MainController">
+
+  <h1>{{ message }}</h1>
+
+  <my-directive></my-directive>
+
+</body>
+</html>
+
+
+
+
+
+
+
+<!-- 3 -->
+ <!DOCTYPE html>
+<html ng-app>
+<head>
+  <title>AngularJS Data Binding</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+<body ng-init="fruits=['Apple','Banana','Orange']; selected='Banana'">
+
+  <h2>Selected Fruit: {{ selected }}</h2>
+  <select ng-model="selected">
+    <option ng-repeat="fruit in fruits">{{ fruit }}</option>
+  </select>
+
+  <h3>Fruit List</h3>
+  <ul>
+    <li ng-repeat="fruit in fruits">{{ fruit }}</li>
+  </ul>
+
+  <div ng-include="'footer.html'"></div>
+
+</body>
+</html>
+
+

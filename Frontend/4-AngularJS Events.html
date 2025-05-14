@@ -1,0 +1,136 @@
+<!-- 
+1. Fetch the data from mysql database table to AngularJS program.
+-->
+
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+  <meta charset="UTF-8">
+  <title>Fetch MySQL Data (Simulated)</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <script>
+    var app = angular.module('myApp', []);
+    app.controller('myCtrl', function($scope, $http) {
+
+      $http.get("data.json")  
+      .then(function(response) {
+        $scope.users = response.data;
+      });
+
+    });
+  </script>
+</head>
+<body ng-controller="myCtrl">
+
+  <h2>Users Table (Simulated Data)</h2>
+  <table border="1">
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+    </tr>
+    <tr ng-repeat="user in users">
+      <td>{{ user.id }}</td>
+      <td>{{ user.name }}</td>
+    </tr>
+  </table>
+
+</body>
+</html>
+
+
+
+
+
+
+<!-- 
+2. What is DOM(Document Object Model)? Use ng-show, ng-hide and ng-disabled into your program.
+-->
+
+<!DOCTYPE html>
+<html ng-app="showApp">
+<head>
+  <title>DOM Show/Hide</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <script>
+    angular.module('showApp', [])
+    .controller('mainCtrl', function($scope) {
+      $scope.isVisible = true;
+      $scope.isDisabled = false;
+    });
+  </script>
+</head>
+<body ng-controller="mainCtrl">
+
+  <button ng-click="isVisible = !isVisible">Toggle Text</button>
+  <p ng-show="isVisible">This paragraph is visible.</p>
+  <p ng-hide="isVisible">This paragraph is hidden.</p>
+
+  <input type="text" ng-disabled="isDisabled" placeholder="Type here">
+  <button ng-click="isDisabled = !isDisabled">
+    Toggle Disable
+  </button>
+
+</body>
+</html>
+
+
+
+
+
+
+<!-- 
+3. Program that performs various events using ng-click, ng-mousemove and $event.
+-->
+
+<!DOCTYPE html>
+<html ng-app="eventApp">
+<head>
+  <title>Event Demo</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <script>
+    angular.module('eventApp', [])
+    .controller('eventCtrl', function($scope) {
+      $scope.clickMessage = "";
+      $scope.mouseCoords = "";
+
+      $scope.handleClick = function() {
+        $scope.clickMessage = "Button clicked!";
+      };
+
+      $scope.showCoordinates = function(event) {
+        $scope.mouseCoords = "X: " + event.clientX + ", Y: " + event.clientY;
+      };
+    });
+  </script>
+</head>
+<body ng-controller="eventCtrl">
+
+  <button ng-click="handleClick()">Click Me</button>
+  <p>{{ clickMessage }}</p>
+
+  <div style="border:1px solid #ccc; height:150px;" ng-mousemove="showCoordinates($event)">
+    Move your mouse here<br>
+    {{ mouseCoords }}
+  </div>
+
+</body>
+</html>
+
+
+
+
+
+<!-- 
+
+Things to Know
+
+1. What is MySQL?
+MySQL is an open-source relational database management system (RDBMS) used to store and retrieve data. 
+It uses SQL (Structured Query Language) to interact with the database.
+
+2. What is an Event?
+An event is a user interaction or system occurrence — such as a click, keypress, or mouse movement — that can trigger 
+specific JavaScript or AngularJS code to run. 
+
+-->
+

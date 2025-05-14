@@ -1,0 +1,178 @@
+<!-- 
+1. Include different form elements into your program like textbox, selectbox, checkbox and radiobutton.
+-->
+
+<!DOCTYPE html>
+<html ng-app>
+<head>
+  <title>Form Elements in AngularJS</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+<body ng-init="gender='Male'; fruits=['Apple','Banana','Orange']">
+
+  <h2>AngularJS Form Elements</h2>
+
+  <form>
+    Name: <input type="text" ng-model="name"><br><br>
+
+    Gender:
+    <input type="radio" ng-model="gender" value="Male"> Male
+    <input type="radio" ng-model="gender" value="Female"> Female<br><br>
+
+    Select Fruit:
+    <select ng-model="selectedFruit" ng-options="fruit for fruit in fruits"></select><br><br>
+
+    Accept Terms: <input type="checkbox" ng-model="accepted"><br><br>
+
+    <p>Name: {{ name }}</p>
+    <p>Gender: {{ gender }}</p>
+    <p>Selected Fruit: {{ selectedFruit }}</p>
+    <p>Accepted: {{ accepted }}</p>
+  </form>
+
+</body>
+</html>
+
+
+
+
+
+
+
+<!-- 
+2. Validate the form using required and email. Also apply a custom validation.
+-->
+
+<!DOCTYPE html>
+<html ng-app="formApp">
+<head>
+  <title>Form Validation</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <script>
+    angular.module('formApp', [])
+      .controller('formCtrl', function ($scope) {
+        $scope.age = '';
+      });
+  </script>
+</head>
+<body ng-controller="formCtrl">
+
+  <form name="myForm" novalidate>
+    Email: <input type="email" name="userEmail" ng-model="email" required>
+    <span ng-show="myForm.userEmail.$touched && myForm.userEmail.$invalid" style="color:red;">
+      Valid email required
+    </span><br><br>
+
+    Age (18+): <input type="number" name="userAge" ng-model="age" min="18" required>
+    <span ng-show="myForm.userAge.$touched && myForm.userAge.$invalid" style="color:red;">
+      Age must be 18 or more
+    </span><br><br>
+
+    <button ng-disabled="myForm.$invalid">Submit</button>
+  </form>
+
+</body>
+</html>
+
+
+
+
+
+
+
+<!-- 
+3. Program to apply animations to ng-show and ng-hide.
+-->
+
+<!DOCTYPE html>
+<html ng-app="animApp">
+<head>
+  <title>ng-show/ng-hide Animation</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-animate.min.js"></script>
+  <style>
+    .slide-toggle {
+      transition: all 0.5s ease;
+      opacity: 1;
+    }
+
+    .slide-toggle.ng-hide {
+      opacity: 0;
+    }
+  </style>
+  <script>
+    angular.module('animApp', ['ngAnimate'])
+      .controller('animCtrl', function($scope) {
+        $scope.show = true;
+      });
+  </script>
+</head>
+<body ng-controller="animCtrl">
+
+  <button ng-click="show = !show">Toggle Message</button>
+  <div class="slide-toggle" ng-show="show">
+    <h3>This content slides in and out</h3>
+  </div>
+
+</body>
+</html>
+
+
+
+
+
+
+<!-- 
+4. Program to show routing using ng-route. Also include $routeProvider and otherwise() into your program.
+-->
+
+<!DOCTYPE html>
+<html ng-app="routeApp">
+<head>
+  <title>AngularJS Routing</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-route.min.js"></script>
+
+  <script>
+    angular.module('routeApp', ['ngRoute'])
+      .config(function($routeProvider) {
+        $routeProvider
+          .when('/home', {
+            template: '<h2>Welcome to Home Page</h2>'
+          })
+          .when('/about', {
+            template: '<h2>About Us</h2>'
+          })
+          .otherwise({
+            redirectTo: '/home'
+          });
+      });
+  </script>
+</head>
+<body>
+
+  <a href="#!/home">Home</a> |
+  <a href="#!/about">About</a>
+
+  <div ng-view></div>
+
+</body>
+</html>
+
+
+
+
+
+<!-- 
+
+Things to Know
+
+Understand Animations:
+AngularJS animations are powered by ngAnimate. You can animate ng-show, ng-hide, ng-if, 
+ng-repeat, etc., using CSS classes and transitions.
+
+Understand Routing:
+AngularJS routing allows single-page app (SPA) behavior. ngRoute provides $routeProvider 
+to define URL routes, templates, and default (otherwise) paths. 
+
+-->

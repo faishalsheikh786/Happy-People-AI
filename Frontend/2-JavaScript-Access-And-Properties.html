@@ -1,0 +1,170 @@
+<!-- 
+1. Write program using this keyword when we click on a button, it should be disappear.
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Button Disappear with this Keyword</title>
+  <script>
+    function hideButton(button) {
+      button.style.display = 'none'; 
+    }
+  </script>
+</head>
+<body>
+
+  <button onclick="hideButton(this)">Click to Hide</button>
+
+</body>
+</html>
+
+
+
+
+<!-- 
+2. Invoke a function using call() and apply(). Also Spot the difference between them.
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>call() and apply() Example</title>
+  <script>
+    function greet(city, country) {
+      console.log(`Hello, I am from ${this.name}, ${city}, ${country}`);
+    }
+
+    const person = { name: 'John' };
+
+    greet.call(person, 'New York', 'USA');
+
+    greet.apply(person, ['London', 'UK']); 
+  </script>
+</head>
+<body>
+
+</body>
+</html>
+
+
+
+
+<!-- 
+3. Write a program for COUNTER. Whenever we click on a "Count" button, value should increment.
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Counter Program</title>
+  <script>
+    let count = 0;
+
+    function incrementCount() {
+      count++;
+      document.getElementById('counter').innerText = count;
+    }
+  </script>
+</head>
+<body>
+
+  <h2>Counter: <span id="counter">0</span></h2>
+  <button onclick="incrementCount()">Count</button>
+
+</body>
+</html>
+
+
+
+
+
+
+<!-- 
+4. Create a Counter with the help of getter and setter accessors.
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Counter with Getter and Setter</title>
+  <script>
+    function Counter() {
+      let _count = 0;
+
+      this.getCount = function() {
+        return _count;
+      };
+
+      this.setCount = function(value) {
+        if (value >= 0) {
+          _count = value;
+        }
+      };
+    }
+
+    let counter = new Counter();
+
+    function updateCounter() {
+      counter.setCount(counter.getCount() + 1);
+      document.getElementById('counter').innerText = counter.getCount();
+    }
+  </script>
+</head>
+<body>
+
+  <h2>Counter: <span id="counter">0</span></h2>
+  <button onclick="updateCounter()">Count</button>
+
+</body>
+</html>
+
+
+
+
+
+<!-- 
+5. Add some more properties to an existing function using object prototypes.
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Prototype Example</title>
+  <script>
+    function Person(name, age) {
+      this.name = name;
+      this.age = age;
+    }
+
+    Person.prototype.greet = function() {
+      return `Hello, I'm ${this.name} and I'm ${this.age} years old.`;
+    };
+
+    Person.prototype.country = 'Unknown';
+
+    const person1 = new Person('John', 30);
+
+    console.log(person1.greet());
+    console.log(person1.country);
+  </script>
+</head>
+<body>
+
+</body>
+</html>
+
+
+
+
+
+<!-- 
+
+Things To Know 
+
+1. Know keywords and existing functions of JavaScript?
+
+JavaScript keywords are reserved words that have special meaning, like `this`, `var`, `let`, `const`, `function`, `return`, etc.
+Existing JavaScript functions include built-in functions like `alert()`, `console.log()`, `parseInt()`, `setTimeout()`, etc.
+
+-->

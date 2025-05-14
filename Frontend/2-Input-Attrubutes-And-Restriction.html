@@ -1,0 +1,201 @@
+<!-- 
+1. Design the web page using all of the below input attributes: 
+type = text, password, submit, reset, radio, checkbox, button.
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Input Attributes Example</title>
+</head>
+<body>
+
+  <form>
+    <label for="name">Text Input (Name):</label>
+    <input type="text" id="name" name="name" required><br><br>
+
+    <label for="password">Password Input:</label>
+    <input type="password" id="password" name="password" required><br><br>
+
+    <label for="radio">Radio Input:</label>
+    <input type="radio" id="radio" name="group1" value="Option 1"> Option 1
+    <input type="radio" id="radio2" name="group1" value="Option 2"> Option 2<br><br>
+
+    <label for="checkbox">Checkbox Input:</label>
+    <input type="checkbox" id="checkbox" name="subscribe" value="newsletter"> Subscribe to newsletter<br><br>
+
+    <input type="submit" value="Submit">
+    <input type="reset" value="Reset"><br><br>
+
+    <button type="button" onclick="alert('Button clicked!')">Click Me!</button>
+  </form>
+
+</body>
+</html>
+
+
+
+
+
+
+<!-- 
+2. HTML5 input types: 
+type = number, range, color, date, file, time, month, week, email.
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>HTML5 Input Types</title>
+</head>
+<body>
+
+  <form>
+    <label for="number">Number Input (Age):</label>
+    <input type="number" id="number" name="age" min="18" max="99"><br><br>
+
+    <label for="range">Range Input:</label>
+    <input type="range" id="range" name="range" min="1" max="100"><br><br>
+
+    <label for="color">Color Picker:</label>
+    <input type="color" id="color" name="color"><br><br>
+
+    <label for="date">Date Input:</label>
+    <input type="date" id="date" name="bday"><br><br>
+
+    <label for="file">File Input:</label>
+    <input type="file" id="file" name="file"><br><br>
+
+    <label for="time">Time Input:</label>
+    <input type="time" id="time" name="time"><br><br>
+
+    <label for="month">Month Input:</label>
+    <input type="month" id="month" name="month"><br><br>
+
+    <label for="week">Week Input:</label>
+    <input type="week" id="week" name="week"><br><br>
+
+    <label for="email">Email Input:</label>
+    <input type="email" id="email" name="email"><br><br>
+  </form>
+
+</body>
+</html>
+
+
+
+
+
+<!-- 
+3. Apply all of the below input restrictions: 
+disabled, max, maxlength, min, readonly, required, size, value.
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Input Restrictions</title>
+</head>
+<body>
+
+  <form>
+    <label for="disabled">Disabled Input:</label>
+    <input type="text" id="disabled" name="disabled" disabled><br><br>
+
+    <label for="max">Max Value (Age):</label>
+    <input type="number" id="max" name="max" max="100"><br><br>
+
+    <label for="maxlength">Max Length Input:</label>
+    <input type="text" id="maxlength" name="maxlength" maxlength="5"><br><br>
+
+    <label for="min">Min Value (Height):</label>
+    <input type="number" id="min" name="min" min="100"><br><br>
+
+    <label for="readonly">Readonly Input:</label>
+    <input type="text" id="readonly" name="readonly" value="Read-only value" readonly><br><br>
+
+    <label for="required">Required Input:</label>
+    <input type="text" id="required" name="required" required><br><br>
+
+    <label for="size">Size Input:</label>
+    <input type="text" id="size" name="size" size="40"><br><br>
+
+    <label for="value">Default Value:</label>
+    <input type="text" id="value" name="value" value="Pre-filled value"><br><br>
+  </form>
+
+</body>
+</html>
+
+
+
+
+
+<!-- 
+4. Develop a web page using target attribute.
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Target Attribute Example</title>
+</head>
+<body>
+
+  <h2>Click on the link below to open in a new tab:</h2>
+  <a href="https://www.example.com" target="_blank">Open Example.com in a New Tab</a><br><br>
+
+  <a href="https://www.example.com" target="_self">Open Example.com in the Same Tab</a>
+
+</body>
+</html>
+
+
+
+
+
+<!-- 
+5. Use I-frames and Marquee in your webpage.
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>I-frames and Marquee Example</title>
+</head>
+<body>
+
+  <h2>Embedding an I-frame</h2>
+  <iframe src="https://www.example.com" width="600" height="400"></iframe><br><br>
+
+  <h2>Scrolling Marquee Example</h2>
+  <marquee>Welcome to our website! This text scrolls across the screen!</marquee>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+<!--
+
+Good To Know 
+
+1. Try applying as many attributes and restrictions and observe the form behavior.
+
+   - `disabled` prevents the user from interacting with the input.
+   - `required` forces the user to fill the input before submitting.
+   - `maxlength` limits the number of characters.
+   - `readonly` makes the input non-editable but allows selection and copying.
+
+
+2. Understand the difference between target="_blank" and target="_self".
+
+- `target="_blank"` opens the link in a new browser tab.
+- `target="_self"` opens the link in the same tab (this is the default behavior).
+
+-->

@@ -1,0 +1,231 @@
+<!-- 
+1. Apply CSS shadow effects like for image box and hover a cursor.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS Shadow Effects</title>
+  <style>
+    .image-box {
+      width: 300px;
+      height: 200px;
+      background-color: #f2f2f2;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transition: box-shadow 0.3s ease-in-out;
+    }
+
+    .image-box:hover {
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="image-box"></div>
+
+</body>
+</html>
+
+
+
+
+
+
+<!-- 
+2. Use CSS animations (name, duration, iteration-count & delay) and paginations(Hoverable, with and without spaces).
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS Animations and Pagination</title>
+  <style>
+    @keyframes slideIn {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(0); }
+    }
+
+    .animation-box {
+      width: 200px;
+      height: 100px;
+      background-color: #4CAF50;
+      color: white;
+      text-align: center;
+      line-height: 100px;
+      animation: slideIn 1s ease-out 0s 1;
+    }
+
+    .pagination {
+      list-style: none;
+      display: flex;
+      padding: 0;
+    }
+
+    .pagination li {
+      padding: 10px;
+      margin: 0 5px;
+      background-color: #f2f2f2;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .pagination li:hover {
+      background-color: #4CAF50;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="animation-box">Hello Animation</div>
+
+  <h3>Pagination with hover:</h3>
+  <ul class="pagination">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+  </ul>
+
+</body>
+</html>
+
+
+
+
+
+
+<!-- 
+3. Add positions to CSS block (static, relative, fixed, absolute, and sticky).
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS Positioning</title>
+  <style>
+    .static-box {
+      position: static;
+      background-color: lightblue;
+      padding: 10px;
+    }
+
+    .relative-box {
+      position: relative;
+      top: 10px;
+      left: 20px;
+      background-color: lightgreen;
+      padding: 10px;
+    }
+
+    .absolute-box {
+      position: absolute;
+      top: 50px;
+      left: 50px;
+      background-color: lightcoral;
+      padding: 10px;
+    }
+
+    .fixed-box {
+      position: fixed;
+      top: 0;
+      left: 0;
+      background-color: lightyellow;
+      padding: 10px;
+    }
+
+    .sticky-box {
+      position: sticky;
+      top: 0;
+      background-color: lightpink;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="static-box">Static Position</div>
+  <div class="relative-box">Relative Position</div>
+  <div class="absolute-box">Absolute Position</div>
+  <div class="fixed-box">Fixed Position</div>
+  <div class="sticky-box">Sticky Position</div>
+
+</body>
+</html>
+
+
+
+
+
+<!-- 
+4. Handling Overflow using scroll.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Overflow Scroll Example</title>
+  <style>
+    .scroll-container {
+      width: 300px;
+      height: 200px;
+      overflow: auto;
+      border: 1px solid #ccc;
+    }
+
+    .content {
+      height: 500px;
+      width: 100%;
+      background-color: #f4f4f4;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="scroll-container">
+    <div class="content">
+      <p>Scroll me!</p>
+      <p>Content goes here.</p>
+      <p>More content...</p>
+      <p>Keep scrolling...</p>
+    </div>
+  </div>
+
+</body>
+</html>
+
+
+
+
+
+<!-- 
+5. Adding Opacity to an image.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Image Opacity</title>
+  <style>
+    img {
+      opacity: 0.5;
+      transition: opacity 0.3s ease-in-out;
+    }
+
+    img:hover {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+
+  <img src="https://tse1.mm.bing.net/th/id/OIP.qwAjW3DyVFhtQgIqCZASwgHaFj?cb=iwp2&rs=1&pid=ImgDetMain" alt="Placeholder Image">
+
+</body>
+</html>

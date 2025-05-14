@@ -1,0 +1,171 @@
+
+<!-- 1. Add CSS comments in your CSS block. -->
+
+<style>
+  /* This is a CSS comment */
+  body {
+    background-color: lightblue;
+  }
+</style>
+
+
+
+
+
+<!-- 
+2. Create a page with different background-colour of a page and set an image as the 
+background-image of a page (image should not scroll with the rest of the page and 
+specify the size of a background image) 
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Background Image Example</title>
+  <style>
+    body {
+      background-color: #f0f0f0;
+      background-image: url('your-image.jpg');
+      background-attachment: fixed;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+  </style>
+</head>
+<body>
+  <h1>Fixed Background Image Page</h1>
+  <p>This background image stays fixed when scrolling.</p>
+</body>
+</html>
+
+
+
+
+
+<!-- 
+3. Create a different page with the width, style and color of the 4 border-style(set 
+different borders on each side with different patterns). 
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Different Borders</title>
+  <style>
+    .box {
+      border-top: 5px solid red;
+      border-right: 5px dashed green;
+      border-bottom: 5px dotted blue;
+      border-left: 5px double purple;
+      padding: 20px;
+      margin: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">This box has different border styles on each side.</div>
+</body>
+</html>
+
+
+
+
+
+<!-- 
+4. Develop a page and set the height:(in pixels and %) and width:(in pixels and %) on 
+elements. 
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Height and Width Example</title>
+  <style>
+    .pixel-box {
+      width: 300px;
+      height: 150px;
+      background-color: lightgreen;
+    }
+
+    .percent-box {
+      width: 50%;
+      height: 30%;
+      background-color: coral;
+    }
+  </style>
+</head>
+<body>
+  <div class="pixel-box">Width and height in pixels</div>
+  <div class="percent-box">Width and height in %</div>
+</body>
+</html>
+
+
+
+
+
+<!-- 
+5. Develop a page with different font-styles, font-size, font-family, colors and text-align. 
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Font Styles</title>
+  <style>
+    .style1 {
+      font-family: Arial, sans-serif;
+      font-size: 20px;
+      color: darkblue;
+      text-align: left;
+    }
+
+    .style2 {
+      font-family: 'Courier New', monospace;
+      font-style: italic;
+      font-size: 24px;
+      color: green;
+      text-align: center;
+    }
+
+    .style3 {
+      font-family: Georgia, serif;
+      font-weight: bold;
+      font-size: 18px;
+      color: crimson;
+      text-align: right;
+    }
+  </style>
+</head>
+<body>
+  <p class="style1">Left aligned, Arial font</p>
+  <p class="style2">Center aligned, Courier New italic</p>
+  <p class="style3">Right aligned, Georgia bold</p>
+</body>
+</html>
+
+
+
+
+
+<!-- 
+1. Importance of HTML DOCTYPE? 
+
+The DOCTYPE tells the browser the HTML version being used.
+It ensures the page is rendered in standards-compliant mode.
+Helps avoid quirks mode which can cause inconsistent rendering.
+The HTML5 doctype is written as: <!DOCTYPE html>
+-->
+
+
+
+
+
+<!-- 
+2. What is the syntax to link external style sheet? 
+
+The correct syntax is:
+<link rel="stylesheet" href="styles.css">
+This connects your HTML file with an external CSS file.
+It's placed inside the <head> section of the HTML page.
+-->
